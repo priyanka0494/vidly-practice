@@ -1,0 +1,12 @@
+<div className="form-group">
+                    <label htmlFor="username">Username</label>
+                    {/* <input autoFocus ref={this.username} id="username" type="text" className="form-control" /> */}
+                    <input autoFocus
+                        value={account.username}
+                        onChange={this.handleChange}
+                        name="username"
+                        id="username"
+                        type="text"
+                        className="form-control"
+                    />
+                </div>

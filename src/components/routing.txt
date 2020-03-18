@@ -1,0 +1,26 @@
+import React, { Component } from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import NavBar from './navbar';
+import Movies from './movies';
+import MoviesDetails from './moviesDetails';
+import Customers from './customers';
+import Rentals from './rentals';
+
+class Routing extends Component {
+	render() {
+		return <div>
+			<NavBar />
+			<div className="content">
+				<Switch>
+					<Route path='/rentals' component={Rentals}/>
+					<Route path='/customers' component={Customers}/>
+					<Route path='/movies/:id' component={MoviesDetails} />
+					<Route path='/movies' component={Movies} />
+					<Redirect exact from='/' to="/movies" />
+				</Switch>
+			</div>
+		</div>;
+	}
+}
+
+export default Routing;
